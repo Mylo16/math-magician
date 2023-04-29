@@ -60,3 +60,10 @@
 .bg-orange {
   background-color: rgb(212, 223, 8);
 }
+
+/***** QUOTES *****/
+
+.quote {
+  width: 80%;
+  margin: auto;
+}
