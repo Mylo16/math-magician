@@ -1,4 +1,7 @@
-.item1 { grid-area: display; }
+.item1 {
+  grid-area: display;
+  height: 1.5em;
+}
 .item2 { grid-area: ac; }
 .item3 { grid-area: plus-minus; }
 .item4 { grid-area: percent; }
@@ -33,7 +36,7 @@
   padding: 2px;
 }
 
-.grid-container > p {
+.grid-container > button {
   text-align: center;
   padding: 1em 0;
   font-size: 1em;

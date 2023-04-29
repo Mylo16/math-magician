@@ -1,32 +1,48 @@
+import React, { useState } from 'react';
 import '../App.css';
-
-function CalculatorUI() {
-  return (
-    <div className="grid-container">
-      <p className="item1">0</p>
-      <p className="item2 bg-cream">AC</p>
-      <p className="item3 bg-cream">+/-</p>
-      <p className="item4 bg-cream">%</p>
-      <p className="item5 bg-orange">/</p>
-      <p className="item6 bg-cream">7</p>
-      <p className="item7 bg-cream">8</p>
-      <p className="item8 bg-cream">9</p>
-      <p className="item9 bg-orange">x</p>
-      <p className="item10 bg-cream">4</p>
-      <p className="item11 bg-cream">5</p>
-      <p className="item12 bg-cream">6</p>
-      <p className="item13 bg-orange">-</p>
-      <p className="item14 bg-cream">1</p>
-      <p className="item15 bg-cream">2</p>
-      <p className="item16 bg-cream">3</p>
-      <p className="item17 bg-orange">+</p>
-      <p className="item18 bg-cream">0</p>
-      <p className="item19 bg-cream">.</p>
-      <p className="item20 bg-orange">=</p>
-    </div>
-  );
-}
+import calculate from '../logic/calculate';
 
 export default function Calculator() {
-  return <CalculatorUI />;
+  const [dataObject, setDataObject] = useState({
+    total: 0,
+    next: null,
+    operation: null,
+  });
+
+  const handleButtonPress = (e) => {
+    setDataObject((prev) => {
+      const calcus = calculate(prev, e.target.textContent);
+      return { ...prev, ...calcus };
+    });
+  };
+  return (
+    <>
+      <div id="calculator" className="grid-container">
+        <p id="results" className="item1">
+          {dataObject.total}
+          {dataObject.operation}
+          {dataObject.next}
+        </p>
+        <button type="button" onClick={handleButtonPress} className="item2 bg-cream">AC</button>
+        <button type="button" onClick={handleButtonPress} className="item3 bg-cream">+/-</button>
+        <button type="button" onClick={handleButtonPress} className="item4 bg-cream">%</button>
+        <button type="button" onClick={handleButtonPress} className="item5 bg-orange">/</button>
+        <button type="button" onClick={handleButtonPress} className="item6 bg-cream">7</button>
+        <button type="button" onClick={handleButtonPress} className="item7 bg-cream">8</button>
+        <button type="button" onClick={handleButtonPress} className="item8 bg-cream">9</button>
+        <button type="button" onClick={handleButtonPress} className="item9 bg-orange">x</button>
+        <button type="button" onClick={handleButtonPress} className="item10 bg-cream">4</button>
+        <button type="button" onClick={handleButtonPress} className="item11 bg-cream">5</button>
+        <button type="button" onClick={handleButtonPress} className="item12 bg-cream">6</button>
+        <button type="button" onClick={handleButtonPress} className="item13 bg-orange">-</button>
+        <button type="button" onClick={handleButtonPress} className="item14 bg-cream">1</button>
+        <button type="button" onClick={handleButtonPress} className="item15 bg-cream">2</button>
+        <button type="button" onClick={handleButtonPress} className="item16 bg-cream">3</button>
+        <button type="button" onClick={handleButtonPress} className="item17 bg-orange">+</button>
+        <button type="button" onClick={handleButtonPress} className="item18 bg-cream">0</button>
+        <button type="button" onClick={handleButtonPress} className="item19 bg-cream">.</button>
+        <button type="button" onClick={handleButtonPress} className="item20 bg-orange">=</button>
+      </div>
+    </>
+  );
 }
