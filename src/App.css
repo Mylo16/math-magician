@@ -1,3 +1,60 @@
+/***** NAVIGATION *****/
+
+nav {
+  box-shadow: -1px 3px 5px 1px rgba(0, 0, 0, 0.56);
+}
+
+.navbar {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-lists {
+  display: flex;
+  gap: 2em;
+}
+
+.nav-list {
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+  font-size: 1.5em;
+  position: relative;
+  color: black;
+}
+
+.link:focus {
+  color: blue;
+}
+
+.link:hover {
+  color: blue;
+}
+
+.link::after {
+  content: '';
+  height: 1px;
+  width: 0;
+  background-color: rgb(248, 165, 40);
+  border: none;
+  position: absolute;
+  transition: 0.5s;
+  display: block;
+}
+
+.link:hover::after {
+  display: block;
+  width: 100%;
+}
+
+main {
+  padding: 1em;
+}
+
 .item1 {
   grid-area: display;
   height: 1.5em;
@@ -66,4 +123,19 @@
 .quote {
   width: 80%;
   margin: auto;
+}
+
+/***** FOOTER *****/
+
+footer {
+  box-shadow: 2px 3px 5px 3px rgba(0, 0, 0, 0.56);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  padding: 1em;
+  text-align: center;
+  font-size: 1.5em;
 }
