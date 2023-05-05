@@ -31,6 +31,8 @@ React and linter files
 - **[linter files(debugging tools)]**
 - **[React app pack]**
 
+### 🚀 Live Demo
+https://awesome-math-magician.onrender.com
 
 
 ## 💻 Getting Started <a name="getting-started"></a>
